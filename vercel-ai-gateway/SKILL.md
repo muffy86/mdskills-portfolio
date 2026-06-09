@@ -2,13 +2,7 @@
 name: vercel-ai-gateway
 description: "Routes OpenAI-compatible chat completions, embeddings, and image generation through Vercel's AI Gateway for cost-effective edge inference. Use when the user asks to 'use Vercel AI Gateway', 'Vercel AI proxy', 'route OpenAI calls through Vercel', 'set up Vercel AI', or 'cheaper OpenAI-compatible inference'. Reads the VERCEL_AI_GATEWAY_KEY environment variable — never hardcoded."
 license: MIT
-compatibility:
-  - Claude Code
-  - Cursor
-  - Codex
-  - Gemini CLI
-  - VS Code
-  - Copilot
+compatibility: "Claude Code, Cursor, Codex, Gemini CLI, VS Code, Copilot, Amp, Roo Code, Goose, Windsurf, Continue"
 allowed-tools: Bash(python:*) Read
 ---
 
