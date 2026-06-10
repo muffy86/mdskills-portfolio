@@ -24,14 +24,12 @@ def run_browser_task(
     """Start a Notte browser session, run a task, return the answer."""
     try:
         from notte_sdk import NotteClient  # type: ignore
-    except ImportError:
-        print("ERROR: notte-sdk not installed. Run: pip install notte-sdk", file=sys.stderr)
-        sys.exit(1)
+    except ImportError as exc:
+        raise ImportError("notte-sdk not installed. Run: pip install notte-sdk") from exc
 
     api_key = os.getenv("NOTTE_API_KEY")
     if not api_key:
-        print("ERROR: NOTTE_API_KEY not set. Get one at https://console.notte.cc", file=sys.stderr)
-        sys.exit(1)
+        raise ValueError("NOTTE_API_KEY not set. Get one at https://console.notte.cc")
 
     client = NotteClient(api_key=api_key)
     with client.Session() as session:
@@ -54,4 +52,8 @@ if __name__ == "__main__":
     parser.add_argument("--model", default="gemini/gemini-2.5-flash",
                         help="Reasoning model (gemini/gemini-2.5-flash, openai/gpt-4o, ...)")
     args = parser.parse_args()
-    print(run_browser_task(args.task, args.url, args.max_steps, args.model))
+    try:
+        print(run_browser_task(args.task, args.url, args.max_steps, args.model))
+    except (ImportError, ValueError) as err:
+        print(f"ERROR: {err}", file=sys.stderr)
+        sys.exit(1)
