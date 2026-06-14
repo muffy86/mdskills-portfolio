@@ -16,7 +16,7 @@ Run shell commands and manage files on a remote machine via a simple REST API. N
 ### Docker (sandboxed — recommended for agents)
 
 ```bash
-docker run -p 8000:8000 -e API_KEY=your-secret-key ghcr.io/open-webui/open-terminal
+docker run -p 8000:8000 -e OPEN_TERMINAL_API_KEY=your-secret-key ghcr.io/open-webui/open-terminal
 ```
 
 ### pip (bare metal — runs on your actual machine)
@@ -51,6 +51,7 @@ curl -X POST "$OPEN_TERMINAL_URL/execute" \
 ```bash
 curl "$OPEN_TERMINAL_URL/files/list?path=/workspace" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY"
+# → {"files": [{"name": "...", "path": "...", "type": "file|dir", "size": 0}]}
 ```
 
 ### Upload a file
@@ -60,6 +61,7 @@ curl -X POST "$OPEN_TERMINAL_URL/files/upload" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY" \
   -F "file=@script.py" \
   -F "path=/workspace/script.py"
+# → {"status": "ok", "path": "/workspace/script.py"}
 ```
 
 ### Download a file
@@ -68,6 +70,7 @@ curl -X POST "$OPEN_TERMINAL_URL/files/upload" \
 curl "$OPEN_TERMINAL_URL/files/download?path=/workspace/output.txt" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY" \
   -o output.txt
+# → (raw file bytes written to output.txt)
 ```
 
 ### Interactive terminal (WebSocket)
@@ -108,5 +111,6 @@ curl -X POST "$OPEN_TERMINAL_URL/execute" \
 - **Use `/workspace`** as the working directory. It persists for the session.
 - **Sandbox with Docker** when running untrusted or agent-generated commands.
 - **Never expose without `--api-key`.** Set it on startup and rotate if compromised.
+- **Never embed credentials in command strings.** Pass them via environment variables or stdin to prevent exposure in logs and process listings.
 - **Long commands:** Background with `command &` or use the process management API.
 - **Interactive input needed:** Use the WebSocket endpoint, not `/execute`.
