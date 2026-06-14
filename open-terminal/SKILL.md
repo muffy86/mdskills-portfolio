@@ -84,16 +84,19 @@ ws://<host>:8000/terminal?token=$OPEN_TERMINAL_API_KEY
 # Install a package and run a script
 curl -X POST "$OPEN_TERMINAL_URL/execute" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY" \
+  -H "Content-Type: application/json" \
   -d '{"command": "pip install pandas && python3 -c \"import pandas; print(pandas.__version__)\""}'
 
 # Clone a repo and run tests
 curl -X POST "$OPEN_TERMINAL_URL/execute" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY" \
+  -H "Content-Type: application/json" \
   -d '{"command": "git clone https://github.com/owner/repo /workspace/repo && cd /workspace/repo && npm test"}'
 
 # Process a file
 curl -X POST "$OPEN_TERMINAL_URL/execute" \
   -H "Authorization: Bearer $OPEN_TERMINAL_API_KEY" \
+  -H "Content-Type: application/json" \
   -d '{"command": "python3 /workspace/process.py /workspace/input.csv > /workspace/output.json"}'
 ```
 
