@@ -71,6 +71,23 @@ Free domain research and availability checking. No API keys or credentials requi
 - **Install:** `npx mdskills install muffy86/mdskills-portfolio/domain-research`
 
 
+## hermes-tweet
+
+- **Skill name:** `hermes-tweet`
+- **Repo URL:** `https://github.com/muffy86/mdskills-portfolio/tree/main/hermes-tweet`
+- **Description (paste from frontmatter):**
+
+```text
+Use Hermes Tweet when an agent needs Hermes Agent X/Twitter search, social listening, trend checks, launch monitoring, support triage, or approved posting through the native Hermes Tweet plugin. It installs from Xquik-dev/hermes-tweet and keeps reads first, credentials in the runtime environment, and write-like actions gated by explicit user approval.
+```
+
+- **License:** MIT
+- **Compatibility:** Claude Code, Cursor, Codex, Gemini CLI, VS Code, Copilot, Amp, Roo Code, Goose, Windsurf, Continue
+- **Categories:** (pick from the mdskills form)
+- **Tags:** (keywords from the description triggers)
+- **Install:** `npx mdskills install muffy86/mdskills-portfolio/hermes-tweet`
+
+
 ## legal-writer
 
 - **Skill name:** `legal-writer`
@@ -171,4 +188,3 @@ Routes OpenAI-compatible chat completions, embeddings, and image generation thro
 - **Categories:** (pick from the mdskills form)
 - **Tags:** (keywords from the description triggers)
 - **Install:** `npx mdskills install muffy86/mdskills-portfolio/vercel-ai-gateway`
-

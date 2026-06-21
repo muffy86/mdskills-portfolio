@@ -18,6 +18,7 @@ Roo Code, Goose, Windsurf, Continue, and 20+ others).
 | `competitive-intelligence` | Research a competitor and produce an interactive HTML battlecard |
 | `daily-briefing` | Get a prioritized, scannable briefing of what matters today |
 | `domain-research` | RDAP/WHOIS-based domain availability and ownership checks (no API keys) |
+| `hermes-tweet` | Use Hermes Agent for read-first X/Twitter workflows and approved account actions |
 | `legal-writer` | Draft contracts, memos, briefs, ToS, NDAs with Bluebook citation and DOCX output |
 | `openalex-paper-search` | Free academic search across 240M+ scholarly works via OpenAlex |
 | `pdf` | Create, edit, extract, OCR, fill, and convert PDF documents |
