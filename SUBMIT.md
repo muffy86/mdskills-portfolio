@@ -77,7 +77,7 @@ Free domain research and availability checking. No API keys or credentials requi
 - **Repo URL:** `https://github.com/muffy86/mdskills-portfolio/tree/main/hermes-tweet`
 - **Description (paste from frontmatter):**
 
-```
+```text
 Use Hermes Tweet when an agent needs Hermes Agent X/Twitter search, social listening, trend checks, launch monitoring, support triage, or approved posting through the native Hermes Tweet plugin. It installs from Xquik-dev/hermes-tweet and keeps reads first, credentials in the runtime environment, and write-like actions gated by explicit user approval.
 ```
 
