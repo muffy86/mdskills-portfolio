@@ -58,7 +58,7 @@ environment or `~/.hermes/.env`. Keep `HERMES_TWEET_ENABLE_ACTIONS` unset or
 3. Use `tweet_read` for search, account, tweet, reply, follower, trend, and
    monitoring reads.
 4. Before any post, reply, like, follow, DM, monitor change, webhook change,
-   extraction job, or draw action, state the exact endpoint and payload.
+   extraction job, or write-like action, state the exact endpoint and payload.
 5. Call `tweet_action` only after the user approves that exact action.
 6. Summarize the result and note whether the workflow stayed read-only.
 

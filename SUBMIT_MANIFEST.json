@@ -39,7 +39,7 @@
     "name": "hermes-tweet",
     "description": "Use Hermes Tweet when an agent needs Hermes Agent X/Twitter search, social listening, trend checks, launch monitoring, support triage, or approved posting through the native Hermes Tweet plugin. It installs from Xquik-dev/hermes-tweet and keeps reads first, credentials in the runtime environment, and write-like actions gated by explicit user approval.",
     "license": "MIT",
-    "compatibility": "",
+    "compatibility": "Claude Code, Cursor, Codex, Gemini CLI, VS Code, Copilot, Amp, Roo Code, Goose, Windsurf, Continue",
     "repo_path": "muffy86/mdskills-portfolio/hermes-tweet",
     "github_url": "https://github.com/muffy86/mdskills-portfolio/tree/main/hermes-tweet",
     "install_command": "npx mdskills install muffy86/mdskills-portfolio/hermes-tweet"
